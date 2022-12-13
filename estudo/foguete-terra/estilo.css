@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Roboto:ital,wght@1,300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    user-select: none;
+}
+
+body {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(../foguete-terra/universo.jpg);
+    background-size: cover;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0 ,0, 0 0.6);
+    z-index: -1;
+}
+
+.foguete {
+    position: absolute;
+    top: 35%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    height: 140px;
+    z-index: -1;
+}
+
+.terra {
+    display: flex;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 320px;
+}
+
+body:active .terra {
+    position: absolute;
+    top: 1000%;
+    left: 50%;
+    transition: 45s;
+}
+
+body:active .foguete {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 15s;
+    height: 300px;
+}
+
+body:active {
+    animation: animate 4s linear infinite;
+}
+
+@keyframes animate
+ {
+    0% {
+        background-position-y: 0px;
+    }
+    100% {
+        background-position-y: 5600px;
+    }
+}
+
+header {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+header h1 {
+    color: #fff;
+    font-size: 2em;
+}
+
+body:active h1 {
+    opacity: 0;
+    transition: 3s;
+}
